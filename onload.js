@@ -99,6 +99,13 @@ else if (window.attachEvent) {
 /******   Custom Javascript   *******/
 /************************************/
 
+var loginMessage = document.getElementById('loginMessage');
+if (loginMessage) {
+   // loginMessage element is present, modify its properties.
+   loginMessage.innerHTML = "Sign in with your netid in the format 'biola\\username'";
+}
+
+
 
 // This hasn't been tested yet
 // // Append the domain to the username if it's not there.
@@ -114,6 +121,9 @@ else if (window.attachEvent) {
 //   }
 //   return false;
 // }
+// var AppendAndSubmit = function() {
+//   if (AppendUPN()) Login.submitLoginRequest();
+// }
 
 
 var userNameInput = document.getElementById("userNameInput");
@@ -122,27 +132,10 @@ if (userNameInput) {
   // Replace the default placeholder in the username input
   userNameInput.placeholder = 'biola\\username';
 
-
   // This hasn't been tested yet
   // // Check for domain in username on submit
-  // document.getElementById('submitButton').onclick = function() {
-  //   if (AppendUPN()) {
-  //     return Login.submitLoginRequest();
-  //   }
-  // }
-  // document.getElementById('submitButton').onkeypress = function() {
-  //   if (event && event.keyCode == 13) {
-  //     if (AppendUPN()) {
-  //       Login.submitLoginRequest();
-  //     }
-  //   }
-  // }
-  // document.getElementById('loginForm').onkeypress = function() {
-  //   if (event && event.keyCode == 13) {
-  //     if (AppendUPN()) {
-  //       Login.submitLoginRequest();
-  //     }
-  //   }
-  // }
+  // document.getElementById('submitButton').onclick = function() { AppendAndSubmit() }
+  // document.getElementById('submitButton').onkeypress = function(e) { if (e && e.keyCode == 13) AppendAndSubmit() }
+  // document.getElementById('loginForm').onkeypress = function(e) { if (e && e.keyCode == 13) AppendAndSubmit() }
 
 }
