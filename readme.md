@@ -24,7 +24,15 @@ Set logo and background
     Set-AdfsWebTheme -TargetName custom -Illustration @{path="c:\adfs_theme\illustration.jpg"}
     Set-AdfsWebTheme -TargetName custom -Logo @{path="c:\adfs_theme\logo.png"}
 
-Add Home Link (Not needed)
+Apply custom stylesheet
+
+    Set-AdfsWebTheme –TargetName custom –StyleSheet @{path=”c:\adfs_theme\style.css”}
+
+Apply custom javascript
+
+    Set-AdfsWebTheme -TargetName custom -AdditionalFileResource @{Uri="/adfs/portal/script/onload.js";path="c:\adfs_theme\onload.js"}
+
+Add Home Link
 
     Set-AdfsGlobalWebContent -HomeLink http://www.biola.edu/ -HomeLinkText Home
 

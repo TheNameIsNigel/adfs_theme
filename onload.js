@@ -102,40 +102,37 @@ else if (window.attachEvent) {
 var loginMessage = document.getElementById('loginMessage');
 if (loginMessage) {
    // loginMessage element is present, modify its properties.
-   loginMessage.innerHTML = "Sign in with your netid in the format 'biola\\username'";
+   loginMessage.innerHTML = "Sign in with your netid in the format 'biola\\netid'";
 }
 
 
-
-// This hasn't been tested yet
-// // Append the domain to the username if it's not there.
-// var AppendUPN = function () {
-//   var userName = document.getElementById(Login.userNameInput);
-//   if (userName.value) {
-//     var lowerUserName = userName.value.toLowerCase();
-//     var li = lowerUserName.lastIndexOf('@biola');
-//     if (li == -1) {
-//       userName.value = userName.value + '@biola';
-//     }
-//     return true;
-//   }
-//   return false;
-// }
-// var AppendAndSubmit = function() {
-//   if (AppendUPN()) Login.submitLoginRequest();
-// }
+// Append the domain to the username if it's not there.
+var AppendUPN = function () {
+  var userName = document.getElementById(Login.userNameInput);
+  if (userName.value) {
+    var lowerUserName = userName.value.toLowerCase();
+    var li = lowerUserName.lastIndexOf('biola\\');
+    if (li == -1) {
+      userName.value = 'biola\\' + userName.value;
+    }
+    return true;
+  }
+  return false;
+}
+var AppendAndSubmit = function() {
+  if (AppendUPN()) Login.submitLoginRequest();
+}
 
 
 var userNameInput = document.getElementById("userNameInput");
 if (userNameInput) {
 
   // Replace the default placeholder in the username input
-  userNameInput.placeholder = 'biola\\username';
+  userNameInput.placeholder = 'Netid';
 
-  // This hasn't been tested yet
-  // // Check for domain in username on submit
-  // document.getElementById('submitButton').onclick = function() { AppendAndSubmit() }
-  // document.getElementById('submitButton').onkeypress = function(e) { if (e && e.keyCode == 13) AppendAndSubmit() }
-  // document.getElementById('loginForm').onkeypress = function(e) { if (e && e.keyCode == 13) AppendAndSubmit() }
+  // Check for domain in username on submit
+  document.getElementById('submitButton').onclick = function() { AppendAndSubmit() }
+  document.getElementById('submitButton').onkeypress = function(e) { if (e && e.keyCode == 13) AppendAndSubmit() }
+  document.getElementById('loginForm').onkeypress = function(e) { if (e && e.keyCode == 13) AppendAndSubmit() }
 
 }
