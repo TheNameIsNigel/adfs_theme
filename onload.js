@@ -102,7 +102,7 @@ else if (window.attachEvent) {
 var loginMessage = document.getElementById('loginMessage');
 if (loginMessage) {
    // loginMessage element is present, modify its properties.
-   loginMessage.innerHTML = "Sign in with your netid in the format 'biola\\netid'";
+   loginMessage.innerHTML = "Sign in with your Biola NetID";
 }
 
 
