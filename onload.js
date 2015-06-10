@@ -128,7 +128,7 @@ var userNameInput = document.getElementById("userNameInput");
 if (userNameInput) {
 
   // Replace the default placeholder in the username input
-  userNameInput.placeholder = 'CanaryID';
+  userNameInput.placeholder = 'Enter your CanaryID';
 
   // Check for domain in username on submit
   document.getElementById('submitButton').onclick = function() { AppendAndSubmit() }
