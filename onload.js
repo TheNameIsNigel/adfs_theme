@@ -102,7 +102,7 @@ else if (window.attachEvent) {
 var loginMessage = document.getElementById('loginMessage');
 if (loginMessage) {
    // loginMessage element is present, modify its properties.
-   loginMessage.innerHTML = "Sign in with your Biola NetID";
+   loginMessage.innerHTML = "Sign In With Your CanaryID";
 }
 
 
@@ -111,9 +111,9 @@ var AppendUPN = function () {
   var userName = document.getElementById(Login.userNameInput);
   if (userName.value) {
     var lowerUserName = userName.value.toLowerCase();
-    var li = lowerUserName.lastIndexOf('biola\\');
+    var li = lowerUserName.lastIndexOf('CANARYTELEPHONE\\');
     if (li == -1) {
-      userName.value = 'biola\\' + userName.value;
+      userName.value = 'CANARYTELEPHONE\\' + userName.value;
     }
     return true;
   }
@@ -128,7 +128,7 @@ var userNameInput = document.getElementById("userNameInput");
 if (userNameInput) {
 
   // Replace the default placeholder in the username input
-  userNameInput.placeholder = 'Netid';
+  userNameInput.placeholder = 'CanaryID';
 
   // Check for domain in username on submit
   document.getElementById('submitButton').onclick = function() { AppendAndSubmit() }
